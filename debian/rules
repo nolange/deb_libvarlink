@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+# vi: set ts=4:
+
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+PACKAGE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+
+%:
+	dh $@ --buildsystem=meson
+
+## http://wiki.debian.org/onlyjob/get-orig-source
+get-orig-source:
+	@echo "# Downloading..."
+	uscan --noconf --safe --destdir="$(CURDIR)" --check-dirname-level=0 --force-download $(if $(VER),--upstream-version $(VER),--download-current-version) --signature --rename "$(PACKAGE_DIR).."
+
+.PHONY: get-orig-source
+

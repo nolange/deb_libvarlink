@@ -1,0 +1,39 @@
+Source: libvarlink
+Section: devel
+Priority: optional
+Maintainer: Norbert Lange <nolange79@gmail.com>
+Build-Depends: debhelper (>= 10.3), meson (>= 0.40)
+Standards-Version: 4.1.2
+Homepage: https://varlink.org/
+Vcs-Git: https://github.com/varlink/libvarlink
+Vcs-Browser: https://github.com/varlink/libvarlink
+
+Package: varlink
+Multi-Arch: foreign
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Section: libs
+Description: Varlink C Library - utility
+ Varlink is an interface description format and protocol that aims to make
+ services accessible to both humans and machines in the simplest feasible way.
+ .
+ This package contains the commandline utility.
+
+Package: libvarlink0
+Multi-Arch: same
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Section: libs
+Description: Varlink C Library
+ Varlink is an interface description format and protocol that aims to make
+ services accessible to both humans and machines in the simplest feasible way.
+
+Package: libvarlink-dev
+Architecture: any
+Depends: libvarlink0 (= ${binary:Version}), ${misc:Depends}
+Section: libdevel
+Description: Varlink C Library
+ Varlink is an interface description format and protocol that aims to make
+ services accessible to both humans and machines in the simplest feasible way.
+ .
+ This package contains the development headers and VIM support.

@@ -1,0 +1,5 @@
+libvarlink (10-1) unstable; urgency=medium
+
+  * Initial release (Closes: #0042)
+
+ -- Norbert Lange <nolange79@gmail.com>  Tue, 29 May 2018 22:49:40 +0200

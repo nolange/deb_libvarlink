@@ -1,0 +1,4 @@
+usr/lib/*/libvarlink.so
+usr/lib/*/pkgconfig
+usr/include
+usr/share/vim
